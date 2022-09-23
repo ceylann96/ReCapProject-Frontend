@@ -1,8 +1,7 @@
 <ul class="list-group">
     
-    <li [class]="getAllColorClass()" routerLink="/cars">
-    Tüm Renkleri Listele
-    </li>
+    <li class="list-group-item text-white bg-dark" 
+    >RENKLER</li>
 
     <li (click)="setCurrentColor(color)"
     routerLink="/cars/color/{{color.colorId}}"

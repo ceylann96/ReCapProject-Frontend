@@ -1,29 +1,42 @@
-
-
-<table class="table"> 
-    <thead>
-        <tr>
-            <th>Id</th>
-            <th>Ürün Adı</th>
-            <th>Marka</th>
-            <th>Color Id</th>
-            <th>Model Yılı</th>
-            <th>Ücret</th>
-            <th>Acıklama</th>
-        </tr>
-    </thead>
-    <tr *ngFor="let car of cars">
-        <td>{{car.carId}}</td>
-        <td>{{car.carName}}</td>
-        <td>{{car.brandId}}</td>
-        <td>{{car.colorId}}</td>
-        <td>{{car.modelYear}}</td>
-        <td>{{car.dailyPrice}}</td>
-        <td>{{car.description}}</td>
-
-    </tr>
+<div class="card" style="width: 18rem; float:left; margin-right: 10px;" *ngFor="let car of cars">
+  <img *ngIf="car.imagePath" src="https://raw.githubusercontent.com/ceylann96/ReCapProject/master/WebAPI/wwwroot/Uploads/Images/{{car.imagePath}}"  class="card-img-top" alt="...">
+  <div class="card-body">
+    <!-- <h5 class="card-title">{{car.carName}}</h5> -->
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">Brand: {{car.brandName}}</li>
+    <li class="list-group-item">Color: {{car.colorName}}</li>
+    <li class="list-group-item">Model Year: {{car.modelYear}}</li>
+  </ul>
+  <div class="card-body">
+    <a class="card-link">Detaylar</a>
+  </div>
+</div>
 
 
 
 
-</table>
+
+<!-- <table class="table"> 
+  <thead>
+      <tr>
+          <th>Id</th>
+          <th>Ürün Adı</th>
+          <th>Marka</th>
+          <th>Color Id</th>
+          <th>Model Yılı</th>
+          <th>Ücret</th>
+          <th>Acıklama</th>
+      </tr>
+  </thead>
+  <tr *ngFor="let car of cars">
+      <td>{{car.carId}}</td>
+      <td>{{car.carName}}</td>
+      <td>{{car.brandId}}</td>
+      <td>{{car.colorId}}</td>
+      <td>{{car.modelYear}}</td>
+      <td>{{car.dailyPrice}}</td>
+      <td>{{car.description}}</td>
+
+  </tr>
+</table> -->

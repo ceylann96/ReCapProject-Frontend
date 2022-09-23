@@ -10,6 +10,8 @@ import { CustomerComponent } from './components/customer/customer.component';
 import { CarComponent } from './components/car/car.component';
 import { HttpClientModule } from '@angular/common/http';
 import { RentalComponent } from './components/rental/rental.component';
+import { CarDetailPageComponent } from './components/car-detail-page/car-detail-page.component';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -19,12 +21,17 @@ import { RentalComponent } from './components/rental/rental.component';
     ColorComponent,
     CustomerComponent,
     CarComponent,
-    RentalComponent
+    RentalComponent,
+    CarDetailPageComponent,
+    CarDetailPageComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ToastrModule.forRoot({
+      positionClass:"toast-bottom-right"
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
