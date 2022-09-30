@@ -1,4 +1,10 @@
-<div class="card" style="width: 18rem; float:left; margin-right: 10px;" *ngFor="let car of cars">
+<div class="mb-3">
+  <label for="filterText" class="form-label">Araç arayın</label>
+  <input type="text" [(ngModel)]="filterText" class="form-control" id="filterText" placeholder="Aracın ismini giriniz">
+</div>
+
+
+<div class="card" style="width: 18rem; float:left; margin-right: 10px;" *ngFor="let car of cars |filterPipe:filterText">
   <img *ngIf="car.imagePath" src="https://raw.githubusercontent.com/ceylann96/ReCapProject/master/WebAPI/wwwroot/Uploads/Images/{{car.imagePath}}"  class="card-img-top" alt="...">
   <div class="card-body">
     <!-- <h5 class="card-title">{{car.carName}}</h5> -->
@@ -9,7 +15,8 @@
     <li class="list-group-item">Model Year: {{car.modelYear}}</li>
   </ul>
   <div class="card-body">
-    <a class="card-link">Detaylar</a>
+    <a class="card-link">Detaylar</a> 
+    <button (click)="addToCart(car)" type="button" class="btn btn-success" style="margin-left: 60px;">sepete ekle</button>
   </div>
 </div>
 

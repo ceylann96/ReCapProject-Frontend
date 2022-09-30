@@ -1,0 +1,9 @@
+.mySpanQuantity{
+    margin: 5px;
+    background-color: rgb(62, 141, 231) !important;
+}
+
+.mySpanDelete{
+    margin: 5px;
+    background-color: rgb(190, 39, 39) !important;
+}
