@@ -13,10 +13,10 @@ import { CustomerComponent } from './components/customer/customer.component';
 import { CarComponent } from './components/car/car.component';
 import { HttpClientModule } from '@angular/common/http';
 import { RentalComponent } from './components/rental/rental.component';
-import { CarDetailPageComponent } from './components/car-detail-page/car-detail-page.component';
 import { ToastrModule } from 'ngx-toastr';
 import { FilterPipePipe } from './pipes/filter-pipe.pipe';
 import { CartSummaryComponent } from './components/cart-summary/cart-summary.component';
+import { CarDetailPageComponent } from './components/car-detail-page/car-detail-page.component';
 
 @NgModule({
   declarations: [
@@ -27,10 +27,9 @@ import { CartSummaryComponent } from './components/cart-summary/cart-summary.com
     CustomerComponent,
     CarComponent,
     RentalComponent,
-    CarDetailPageComponent,
-    CarDetailPageComponent,
     FilterPipePipe,
-    CartSummaryComponent
+    CartSummaryComponent,
+    CarDetailPageComponent
   ],
   imports: [
     BrowserModule,

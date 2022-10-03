@@ -15,7 +15,7 @@
     <li class="list-group-item">Model Year: {{car.modelYear}}</li>
   </ul>
   <div class="card-body">
-    <a class="card-link">Detaylar</a> 
+    <a class="card-link" routerLink="/cars/{{car.carId}}">Detaylar</a> 
     <button (click)="addToCart(car)" type="button" class="btn btn-success" style="margin-left: 60px;">sepete ekle</button>
   </div>
 </div>
