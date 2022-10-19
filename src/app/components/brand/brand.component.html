@@ -1,14 +1,70 @@
-<ul class="list-group">
+<!-- <ul class="list-group">
     
-    <li [class]="getAllBrandClass()" routerLink="/cars">
-    Tüm Markaları Listele
+    <li class="list-group-item text-center text-white bg-dark" [class]="getAllBrandClass()" routerLink="/cars">
+    MARKALAR
     </li>
 
-    <li (click)="setCurrentBrand(brand)"
+    <li class="list-group-item bg-light" (click)="setCurrentBrand(brand)"
     routerLink="/cars/brand/{{brand.brandId}}"
     *ngFor="let brand of brands"
-    [class]="getCurrentBrandClass(brand)">
+    [class]="getCurrentBrandClass(brand)" class="form-check-label">
+    
     {{brand.brandName}}</li>
 
 
-</ul>
+</ul> -->
+
+<!-- <div class="collapse show" id="brand-collapse">
+    <div class="card-header">
+  
+      <label for="brandFilter" class="form-label mb-3"></label>
+  
+      <input
+        type="text"
+        class="form-control"
+        id="brandFilter"
+        placeholder="Marka Arayın"
+        [(ngModel)]="brandFilter"
+      />
+  
+  <table class="table ">
+    <thead class="table-success">
+      <tr>
+        <th>Brands</th>
+      </tr>
+    </thead>
+    <tr>
+      <ul class="list-group">
+        <li 
+    (click)="clearCurrentBrand()" 
+    routerLink="/cars"
+    [class]="getAllBrandClass()" >Tüm Markalar</li>
+    <li (click)="setCurrentBrand(brand)"
+    *ngFor="let brand of brands|brandFilter:brandFilter"
+        routerLink="/cars/brand/{{brand.brandId}}"
+          [class]="getCurrentBrandClass(brand)">
+          {{ brand.brandName }}
+        </li>   
+       </ul>
+      </tr>
+    </table> -->
+
+
+    
+    
+    <ul class="list-group">
+      <li class="list-group-item text-center text-white bg-dark">
+        MARKALAR
+        </li>
+
+    <select class="form-select" aria-label="Default select example" >
+      <option selected>Tüm Markalar</option>
+      <option  *ngFor="let brand of brands|brandFilter:brandFilter" (click)="setCurrentBrand(brand)"
+      routerLink="/cars/brand/{{brand.brandId}}"
+      [class]="getCurrentBrandClass(brand)"
+       >{{ brand.brandName }}</option>
+      </select>
+
+    </ul>
+   
+ 
